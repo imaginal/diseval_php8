@@ -16,6 +16,18 @@ extern zend_module_entry diseval_module_entry;
 #include "TSRM.h"
 #endif
 
+#if PHP_MAJOR_VERSION == 8
+#ifndef TSRMLS_D
+#define TSRMLS_D void
+#define TSRMLS_DC
+#define TSRMLS_C
+#define TSRMLS_CC
+#define TSRMLS_FETCH()
+#endif
+#endif
+
+ZEND_BEGIN_ARG_INFO(arginfo_diseval_info, 0)
+ZEND_END_ARG_INFO()
 
 PHP_MINIT_FUNCTION(diseval);
 PHP_MSHUTDOWN_FUNCTION(diseval);

@@ -20,7 +20,7 @@ ZEND_GET_MODULE(diseval)
 void (*zend_execute_old)(zend_execute_data *execute_data TSRMLS_DC);
 
 zend_function_entry diseval_functions[] = {
-	PHP_FE(diseval_info,   0)
+	PHP_FE(diseval_info,   arginfo_diseval_info)
 	PHP_FE_END
 };
 
